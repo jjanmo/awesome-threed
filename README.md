@@ -225,7 +225,7 @@ y: 60.333335876464844
 const io = new IntersectionObserver(callback [,option ] );
 //생성자 함수를 통해서 인스턴스를 생성한다.
 
-io.observer(element);
+io.observe(element);
 //관찰할 대상을 등록한다.
 
 //관찰대상이 보이거나 사라지게 되면 콜백함수가 호출된다.
