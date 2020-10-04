@@ -15,13 +15,14 @@ h2 {
 }
 a {
 	color: royalblue;
+	text-decoration: none;
 }
 img {
 	max-width: 100%;
 	height: auto;
 }
 .scene-img {
-	height: 100vh;
+	max-height: 100vh;
 }
 .global-width {
 	max-width: 55vw;
@@ -31,6 +32,7 @@ img {
 	position: sticky;
 	top: 0;
 	height: 100vh;
+	overflow: hidden;
 }
 .graphic-item {
 	position: absolute;
@@ -43,10 +45,10 @@ img {
 	height: 100%;
 	opacity: 0;
 	transition: 0.6s;
-	overflow: hidden;
 }
 .scroll-text {
 	position: relative;
+	padding-bottom: 1px;
 }
 .step {
 	background-color: rgba(255, 255, 255, 0.7);
@@ -72,4 +74,9 @@ img {
 	left: 45%;
 	width: 100px;
 	transition: 1.2s 0.3s linear;
+}
+.global-footer {
+	width: 100%;
+	text-align: center;
+	padding: 2rem 0;
 }

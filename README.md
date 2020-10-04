@@ -12,10 +12,6 @@
 
 <br />
 
-## HTML
-
-<br />
-
 ## CSS
 
 ### position : sticky
@@ -84,6 +80,56 @@
 2. z-index를 설정하기 위해선 position속성(absolute, relative 등)이 설정되어 있어야 한다.
 
 <br />
+
+### 마진병합현상
+
+> 마진병합현상이란 두 개의 엘리먼트 사이에 각각의 마진이 합쳐진 상태로 보여지는 현상을 말한다.
+
+> 마진병합현상이 일어나는 조건
+
+- 인접해 있는 block요소들끼리만 일어난다.
+- 상하단의 마진에만 해당한다.
+
+![margin1](image/margin1.png)
+
+> 위 이미지를 보면, A의 bottom 마진, B의 top 마진이 각각 10px로 설정되어 `총 20px`이 되어야하지만 `10px`만 표현되었다. 이렇게 마진이 합쳐지는 현상이 `마진병합현상`이다.
+
+> 이는 잘못된 것이 아니라 CSS설계상 내부적으로 의도된 것이다. 위의 상태를 보면 매우 안정적이라는 생각이 든다. 개발자에게 좀 더 편한 작업을 위한 내부적인 의도된 것임을 알 수 있다. <u>하지만 항상 마진병합현상이 이로울까?</u>
+
+> 이 프로젝트에서 마진병합으로 생긴 문제의 코드
+
+```HTML
+    <div class="scroll-text">
+        <div class="step">
+            <!-- ... -->
+        </div>
+            <!-- div x 8 -->
+        <div class="step">
+            <!-- 마지막 div -->
+        </div>
+    </div>
+```
+
+```CSS
+.scroll-text{
+    /* 마진설정없음 */
+}
+.step{
+    /* ... */
+    margin-bottom: 60vh;
+}
+```
+
+> 마진병합현상으로 인해 .step div의 margin-bottom이 .scroll-text 마진과 병합이 일어나서, 최종적으로 .scroll-text 의 margin-bottom에 60vh가 생성되었다. 그렇게 되면서 예상과는 다른 디자인이 나타나게 된다.
+
+> **해결방법**
+
+- 부모요소에서 공간을 차지하지만 영향이 없는 요소를 추가함으로서 부모와 자식 엘리먼트간 상하마진을 분리시킨다.
+  - padding : 1px; (이 프로젝트에서의 해결법)
+  - border : 1px solid transparent;
+  - overflow : hidden;(부모요소에 설정)
+
+<br/>
 
 ## JavaScript
 
