@@ -241,7 +241,7 @@ function callback(entries, observer){
 
 > entry 객체가 담고 있는 프로퍼티들이다. 여기서는 `target`을 사용하였다. 그 외에 필요한 부분이 있을 때 찾아보면서 활용해야할 것 같다.
 
-> [Link](https://heropy.blog/2019/10/27/intersection-observer/)
+> > 각 프로퍼티들에 대한 자세한 설명 : [Link](https://heropy.blog/2019/10/27/intersection-observer/)
 
 ```javascript
 boundingClientRect: DOMRectReadOnly {x: 432.65625, y: 47.25, width: 400.015625, height: 100.015625, top: 47.25, …}
