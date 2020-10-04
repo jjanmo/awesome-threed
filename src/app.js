@@ -2,7 +2,7 @@
 	const $images = document.querySelectorAll('.graphic-item');
 	const $texts = document.querySelectorAll('.step');
 
-	let $currentImage = document.querySelector('.visible');
+	let $currentImage;
 	let actionObj;
 
 	function setIndex() {
@@ -42,6 +42,7 @@
 
 	function init() {
 		setIndex();
+		showImage(0);
 		window.addEventListener('scroll', handleScroll);
 
 		actionObj = {
