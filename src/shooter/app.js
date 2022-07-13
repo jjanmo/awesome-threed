@@ -1,13 +1,8 @@
 const canvas = document.querySelector('#canvas');
+const context = canvas.getContext('2d');
 
-function init() {
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-
-init();
+const player = new Player(canvas.width / 2, canvas.height / 2, 50, 'tomato');
+player.draw();
