@@ -1,11 +1,14 @@
 import type { AppProps } from 'next/app'
+import GlobalStyle from '../styles/GlobalStyle'
 import ResetStyle from '../styles/ResetStyle'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Component {...pageProps}>
+    <>
       <ResetStyle />
-    </Component>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </>
   )
 }
 
