@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --vh: 100vh
+    --vh: 100vh;
+    font-size : 10px;
   }
 
   html {
